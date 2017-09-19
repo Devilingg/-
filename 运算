@@ -1,0 +1,68 @@
+#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+#include<conio.h>
+
+int main(){
+	int a,b,c,d,n;
+	char m;
+start:srand(time(0));
+	a=rand()%100;
+	b=rand()%100;
+	n=rand()%100;
+	c=rand()%4;
+	switch(c){
+		case 0:printf("%d+%d=",a,b);break;
+		case 1:printf("%d-%d=",a,b);break;
+		case 2:printf("%d*%d=",a,b);break;
+		case 3:printf("%d+%d-%d=",a,b,n);break;
+		case 4:if(b==0){
+
+					while(b==0){
+					a=rand()%100;
+					b=rand()%100;
+					printf("%d/%d=",a,b);
+		}
+	}
+				else
+					printf("%d/%d=",a,b);
+				break;
+	}
+	scanf("%d",&d);
+	getchar();
+	switch(c){
+		case 0:if(d==a+b)
+					printf("You are right\n");
+					else
+						printf("You are wrong\n");
+				break;
+		case 1:if(d==a-b)
+					printf("You are right\n");
+					else
+						printf("You are wrong\n");
+				break;
+		case 2:if(d==a*b)
+					printf("You are right\n");
+					else
+						printf("You are wrong\n");
+				break;
+		case 3:if(d==a+b-n)
+					printf("You are right\n");
+					else
+						printf("You are wrong\n");
+				break;
+		case 4:if(d==a/b)
+					printf("You are right\n");
+					else
+						printf("You are wrong\n");
+				break;
+
+	}
+	printf("继续请输入Y，退出请输入任意字符。");
+	scanf("%c",&m);
+	getchar();
+	if(m=='Y')
+		goto start;
+
+		return 0;
+}
